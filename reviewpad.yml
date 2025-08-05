@@ -1,0 +1,13 @@
+version: 1
+
+rules:
+  - name: assign reviewers
+    condition: changed_files > 0
+    actions:
+      - assign:
+          users: yashdarjimilestone
+
+  - name: large PR warning
+    condition: additions > 300
+    actions:
+      - comment: "⚠️ This PR is quite large. Consider breaking it up."
